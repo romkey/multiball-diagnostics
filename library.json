@@ -1,0 +1,21 @@
+{
+    "name": "multiball-diagnostics",
+    "keywords": "homebus, iot, esp32, esp8266, arduino, wifi, i2c",
+    "description": "Diagnostic library for ESP8266/ESP32 running Homebus applications",
+    "authors":
+    {
+	"name": "John Romkey",
+	"url": "https://romkey.com"
+    },
+    "repository":
+    {
+	"type": "git",
+	"url": "https://github.com/romkey/multiball-diagnostics.git"
+    },
+    "license": "MIT",
+    "frameworks": "arduino",
+    "platforms": ["espressif8266", "espressif32"],
+    "version": "0.1.0",
+    "dependencies": [
+    ]
+}
