@@ -22,7 +22,7 @@ static void output_menu() {
 }
 
 
-void diagnostics_setup(){
+void diagnostics_setup(const char *app_name){
   Serial.begin(115200);
 
   //  Serial.setDebugOutput(true);
@@ -30,6 +30,8 @@ void diagnostics_setup(){
   Serial.println();
   Serial.println("Hello World");
   delay(5000);
+
+  AppConfig::begin(app_name);
 
   i2c_begin();
 
@@ -147,7 +149,6 @@ static void diagnostics_homebus() {
   Serial.print("Homebus password: "); Serial.println(App.config.get("hb-password: "));
   Serial.print("Homebus port: "); Serial.println(App.config.get("hb-port: "));
   Serial.print("Homebus refresh token: "); Serial.println(App.config.get("hb-refresh-token: "));
-  Serial.print("Homebus auth token: "); Serial.println(App.config.get("hb-auth-token: "));
 }
 
 void homebus_reset();
