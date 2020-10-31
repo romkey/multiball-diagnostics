@@ -9,6 +9,7 @@ void i2c_begin(), i2c_scan(), blink_start(int), wifi_begin(), wifi_scan(), wifi_
 bool wifi_connected();
 
 static void diagnostics_homebus();
+static void diagnostics_reset_homebus();
 static int serial_read_line();
 
 static void output_menu() {
