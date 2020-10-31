@@ -15,7 +15,8 @@ static void output_menu() {
   Serial.println("1. Show ESP information");
   Serial.println("5. Scan wifi networks");
   Serial.println("6. Scan I2C devices");
-  Serial.println("7. Review/edit Homebus config");
+  Serial.println("7. Review Homebus config");
+  Serial.println("8. Clear Homebus config");
   Serial.println("0. Quit/Restart");
 }
 
@@ -57,6 +58,9 @@ void diagnostics_loop(void (*streamer)()) {
 
     case '7':
       diagnostics_homebus();
+
+    case '8':
+      diagnostics_reset_homebus();
 
     case '0':
       Serial.println("RESTART ESP");
@@ -141,4 +145,12 @@ static void diagnostics_homebus() {
   Serial.print("Homebus username: "); Serial.println(App.config.get("hb-username: "));
   Serial.print("Homebus password: "); Serial.println(App.config.get("hb-password: "));
   Serial.print("Homebus port: "); Serial.println(App.config.get("hb-port: "));
+  Serial.print("Homebus refresh token: "); Serial.println(App.config.get("hb-refresh-token: "));
+  Serial.print("Homebus auth token: "); Serial.println(App.config.get("hb-auth-token: "));
+}
+
+void homebus_reset();
+
+static void diagnostics_reset_homebus() {
+  homebus_reset();
 }
