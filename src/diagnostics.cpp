@@ -23,15 +23,15 @@ static void output_menu() {
 
 
 void diagnostics_setup(const char *app_name){
-  Serial.begin(115200);
+  //  Serial.begin(115200);
 
   //  Serial.setDebugOutput(true);
   Serial.println();
   Serial.println();
-  Serial.println("Hello World");
+  Serial.println("Diagnostics begin");
   delay(5000);
 
-  AppConfig::begin(app_name);
+  //  AppConfig::begin(app_name);
 
   i2c_begin();
 
